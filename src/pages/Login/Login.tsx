@@ -1,22 +1,44 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./login.css";
+import { authenticateUser } from "../../utils/authService";
 
 export default function Login() {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleLogin(e: React.FormEvent, role: string) {
+  function handleLogin(e: React.FormEvent, _role: string) {
     e.preventDefault();
-    // 🔒 Login muy simple (solo ejemplo)
-    if (user === "admin" && password === "1234") {
-      localStorage.setItem("auth", "true");
-      navigate("/principal");
-    } else {
-      alert("Credenciales incorrectas");
-    }
+    setLoading(true);
+    setError("");
+
+    // Simular delay de red (opcional)
+    setTimeout(() => {
+      // 🔒 Autenticación usando JSON
+      const response = authenticateUser(user, password);
+
+      if (response.success && response.user && response.token) {
+        // Guardar información del usuario
+        localStorage.setItem("auth", "true");
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("user", JSON.stringify(response.user));
+        
+        // Recordar contraseña si está marcado
+        if (remember) {
+          localStorage.setItem("rememberedUser", user);
+        }
+
+        alert(`¡Bienvenido ${response.user.fullName}!\nRol: ${response.user.role}`);
+        navigate("/principal");
+      } else {
+        setError(response.message);
+        alert(response.message);
+      }
+      setLoading(false);
+    }, 500);
   }
 
   return (
@@ -73,9 +95,26 @@ export default function Login() {
               />
               <label htmlFor="recordar" style={{ margin: 0 }}>Recordar contraseña</label>
             </div>
+            {error && (
+              <div style={{ color: 'red', fontSize: '14px', marginBottom: '8px' }}>
+                {error}
+              </div>
+            )}
             <a href="#"><strong>¿Olvidaste tu contraseña?</strong></a>
             <div className="Botones-login">
-              <button type="button" onClick={(e) => handleLogin(e, "estudiante")}>Iniciar Sesion</button>
+              <button 
+                type="button" 
+                onClick={(e) => handleLogin(e, "estudiante")}
+                disabled={loading}
+              >
+                {loading ? 'Verificando...' : 'Iniciar Sesión'}
+              </button>
+            </div>
+            <div style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}>
+              <strong>Usuarios de prueba:</strong><br/>
+              admin / admin123 (Administrador)<br/>
+              profesor1 / prof123 (Profesor)<br/>
+              estudiante1 / est123 (Estudiante)
             </div>
           </form>
         </div>

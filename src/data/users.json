@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@uleam.edu.ec",
+      "role": "administrador",
+      "fullName": "Administrador del Sistema",
+      "active": true
+    },
+    {
+      "id": 2,
+      "username": "profesor1",
+      "password": "prof123",
+      "email": "profesor1@uleam.edu.ec",
+      "role": "profesor",
+      "fullName": "Dr. Juan Pérez",
+      "department": "Ingeniería en Sistemas",
+      "active": true
+    },
+    {
+      "id": 3,
+      "username": "estudiante1",
+      "password": "est123",
+      "email": "estudiante1@uleam.edu.ec",
+      "role": "estudiante",
+      "fullName": "María García López",
+      "career": "Ingeniería en Sistemas",
+      "semester": 5,
+      "active": true
+    },
+    {
+      "id": 4,
+      "username": "profesor2",
+      "password": "prof123",
+      "email": "profesor2@uleam.edu.ec",
+      "role": "profesor",
+      "fullName": "Dra. Ana Martínez",
+      "department": "Ingeniería en Sistemas",
+      "active": true
+    },
+    {
+      "id": 5,
+      "username": "estudiante2",
+      "password": "est123",
+      "email": "estudiante2@uleam.edu.ec",
+      "role": "estudiante",
+      "fullName": "Carlos Rodríguez Sánchez",
+      "career": "Ingeniería en Sistemas",
+      "semester": 6,
+      "active": true
+    }
+  ]
+}

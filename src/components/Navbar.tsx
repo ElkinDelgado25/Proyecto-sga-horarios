@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Navbar(){
     return (
         <header className="navbar-superior">
@@ -16,17 +18,17 @@ function Navbar(){
             </span>
         </div>
         <ul className="navbar-list">
-            <li className="navbar-item"><a href="Home.html">Página Principal</a></li>
-            <li className="navbar-item"><a href="Preferencias.html">Área personal</a></li>
-            <li className="navbar-item"><a href="Mis_cursos.html">Mis cursos</a></li>
+            <li className="navbar-item"><Link to="/">Página Principal</Link></li>
+            <li className="navbar-item"><Link to="/principal">Área personal</Link></li>
+            <li className="navbar-item"><Link to="/principal/miscursos">Mis cursos</Link></li>
         </ul>
         <div className="navbar-right">
             <div className="navbar-user-dropdown">
                 <span className="navbar-user-icon">US</span>
                 <span className="navbar-username">Usuario</span>
                 <div className="navbar-user-dropdown-content">
-                    <a href="Perfil.html">Perfil</a>
-                    <a href="Login.html" id="btnLogoutDropdown">Cerrar sesión</a>
+                    <Link to="/principal">Perfil</Link>
+                    <Link to="/login" id="btnLogoutDropdown">Cerrar sesión</Link>
                 </div>
             </div>
         </div>

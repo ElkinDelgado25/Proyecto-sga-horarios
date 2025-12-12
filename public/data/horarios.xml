@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sistema_horarios>
+  <metadata>
+    <institucion>Universidad Laica Eloy Alfaro de Manabí</institucion>
+    <facultad>Facultad de Ciencias Informáticas</facultad>
+    <carrera>Ingeniería en Sistemas</carrera>
+    <periodo>2025-01</periodo>
+    <fecha_actualizacion>2025-02-07</fecha_actualizacion>
+  </metadata>
+  
+  <horarios>
+    <!-- Horario 1: Programación Web -->
+    <horario id="H001">
+      <materia>
+        <codigo>IS-401</codigo>
+        <nombre>Programación Web</nombre>
+        <creditos>4</creditos>
+        <nivel>Cuarto</nivel>
+      </materia>
+      <profesor>
+        <id>2</id>
+        <nombre>Dr. Juan Pérez</nombre>
+        <email>profesor1@uleam.edu.ec</email>
+      </profesor>
+      <aula>
+        <codigo>LAB-A101</codigo>
+        <edificio>Bloque A</edificio>
+        <capacidad>30</capacidad>
+        <tipo>Laboratorio</tipo>
+      </aula>
+      <horario_semanal>
+        <sesion>
+          <dia>Lunes</dia>
+          <hora_inicio>08:00</hora_inicio>
+          <hora_fin>10:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+        <sesion>
+          <dia>Miércoles</dia>
+          <hora_inicio>08:00</hora_inicio>
+          <hora_fin>10:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+      </horario_semanal>
+      <estudiantes_inscritos>28</estudiantes_inscritos>
+      <estado>activo</estado>
+    </horario>
+
+    <!-- Horario 2: Base de Datos II -->
+    <horario id="H002">
+      <materia>
+        <codigo>IS-402</codigo>
+        <nombre>Base de Datos II</nombre>
+        <creditos>4</creditos>
+        <nivel>Cuarto</nivel>
+      </materia>
+      <profesor>
+        <id>4</id>
+        <nombre>Dra. Ana Martínez</nombre>
+        <email>profesor2@uleam.edu.ec</email>
+      </profesor>
+      <aula>
+        <codigo>LAB-A102</codigo>
+        <edificio>Bloque A</edificio>
+        <capacidad>30</capacidad>
+        <tipo>Laboratorio</tipo>
+      </aula>
+      <horario_semanal>
+        <sesion>
+          <dia>Martes</dia>
+          <hora_inicio>10:00</hora_inicio>
+          <hora_fin>12:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+        <sesion>
+          <dia>Jueves</dia>
+          <hora_inicio>10:00</hora_inicio>
+          <hora_fin>12:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+      </horario_semanal>
+      <estudiantes_inscritos>25</estudiantes_inscritos>
+      <estado>activo</estado>
+    </horario>
+
+    <!-- Horario 3: Ingeniería de Software -->
+    <horario id="H003">
+      <materia>
+        <codigo>IS-501</codigo>
+        <nombre>Ingeniería de Software</nombre>
+        <creditos>5</creditos>
+        <nivel>Quinto</nivel>
+      </materia>
+      <profesor>
+        <id>2</id>
+        <nombre>Dr. Juan Pérez</nombre>
+        <email>profesor1@uleam.edu.ec</email>
+      </profesor>
+      <aula>
+        <codigo>AULA-B201</codigo>
+        <edificio>Bloque B</edificio>
+        <capacidad>35</capacidad>
+        <tipo>Aula</tipo>
+      </aula>
+      <horario_semanal>
+        <sesion>
+          <dia>Lunes</dia>
+          <hora_inicio>14:00</hora_inicio>
+          <hora_fin>16:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+        <sesion>
+          <dia>Miércoles</dia>
+          <hora_inicio>14:00</hora_inicio>
+          <hora_fin>16:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+        <sesion>
+          <dia>Viernes</dia>
+          <hora_inicio>08:00</hora_inicio>
+          <hora_fin>09:00</hora_fin>
+          <duracion>60</duracion>
+        </sesion>
+      </horario_semanal>
+      <estudiantes_inscritos>32</estudiantes_inscritos>
+      <estado>activo</estado>
+    </horario>
+
+    <!-- Horario 4: Redes de Computadoras -->
+    <horario id="H004">
+      <materia>
+        <codigo>IS-502</codigo>
+        <nombre>Redes de Computadoras</nombre>
+        <creditos>4</creditos>
+        <nivel>Quinto</nivel>
+      </materia>
+      <profesor>
+        <id>4</id>
+        <nombre>Dra. Ana Martínez</nombre>
+        <email>profesor2@uleam.edu.ec</email>
+      </profesor>
+      <aula>
+        <codigo>LAB-C301</codigo>
+        <edificio>Bloque C</edificio>
+        <capacidad>25</capacidad>
+        <tipo>Laboratorio</tipo>
+      </aula>
+      <horario_semanal>
+        <sesion>
+          <dia>Martes</dia>
+          <hora_inicio>14:00</hora_inicio>
+          <hora_fin>16:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+        <sesion>
+          <dia>Jueves</dia>
+          <hora_inicio>14:00</hora_inicio>
+          <hora_fin>16:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+      </horario_semanal>
+      <estudiantes_inscritos>24</estudiantes_inscritos>
+      <estado>activo</estado>
+    </horario>
+
+    <!-- Horario 5: Seguridad Informática -->
+    <horario id="H005">
+      <materia>
+        <codigo>IS-601</codigo>
+        <nombre>Seguridad Informática</nombre>
+        <creditos>4</creditos>
+        <nivel>Sexto</nivel>
+      </materia>
+      <profesor>
+        <id>2</id>
+        <nombre>Dr. Juan Pérez</nombre>
+        <email>profesor1@uleam.edu.ec</email>
+      </profesor>
+      <aula>
+        <codigo>LAB-A103</codigo>
+        <edificio>Bloque A</edificio>
+        <capacidad>30</capacidad>
+        <tipo>Laboratorio</tipo>
+      </aula>
+      <horario_semanal>
+        <sesion>
+          <dia>Viernes</dia>
+          <hora_inicio>10:00</hora_inicio>
+          <hora_fin>12:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+        <sesion>
+          <dia>Viernes</dia>
+          <hora_inicio>14:00</hora_inicio>
+          <hora_fin>16:00</hora_fin>
+          <duracion>120</duracion>
+        </sesion>
+      </horario_semanal>
+      <estudiantes_inscritos>22</estudiantes_inscritos>
+      <estado>activo</estado>
+    </horario>
+  </horarios>
+</sistema_horarios>
