@@ -1,0 +1,74 @@
+.page {
+  padding: 16px;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.main {
+  min-width: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.card {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.muted {
+  opacity: 0.75;
+}
+
+.link {
+  font-weight: 700;
+  text-decoration: none;
+}
