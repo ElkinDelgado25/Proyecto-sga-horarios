@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>3
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/Home.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Home.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar-superior">
+        <div class="navbar-left">
+            <img src="../Src/Foto_uleam_pequeño.png" alt="ULEAM Logo" class="navbar-uleam-logo" />
+            <span class="navbar-logo">&#9776;</span>
+            <span class="navbar-title">
+                Aula Virtual
+                <span class="navbar-birrete"> 
+                    <!-- Icono de birrete estilo sólido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 28px; height: 28px; vertical-align: middle;">
+                        <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+                    </svg>
+                </span>
+            </span>
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="Home.html">Página Principal</a></li>
+            <li class="navbar-item"><a href="Preferencias.html">Área personal</a></li>
+            <li class="navbar-item"><a href="Mis_cursos.html">Mis cursos</a></li>
+        </ul>
+        <div class="navbar-right">
+            <div class="navbar-user-dropdown" tabindex="0">
+                <span class="navbar-user-icon">US</span>
+                <span class="navbar-username">Usuario</span>
+                <div class="navbar-user-dropdown-content">
+                    <a href="Perfil.html">Perfil</a>
+                    <a href="Login.html" id="btnLogoutDropdown">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="Home.html"><span class="sidebar-icon">🏠</span>Inicio</a></li>
+                <li><a href="Mis_cursos.html"><span class="sidebar-icon">📚</span>Mis cursos</a></li>
+                <li><a href="Horarios.html"><span class="sidebar-icon">🕒</span>Horarios</a></li>
+                <li><a href="Notificaciones.html"><span class="sidebar-icon">🔔</span>Notificaciones</a></li>
+                <li><a href="Preferencias.html"><span class="sidebar-icon">⚙️</span>Preferencias</a></li>
+                <li><a href="Usuarios.html"><span class="sidebar-icon">👤</span>Usuarios</a></li>
+                <li><a href="Facultades.html"><span class="sidebar-icon">🏛️</span>Facultades</a></li>
+                <li><a href="Asignacion_horario.html"><span class="sidebar-icon">🗓️</span>Asignación de Horario</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h1>Panel de inicio</h1>
+                <p>Bienvenido al Aula Virtual</p>
+            </div>
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="card-icon">📅</div>
+                    <div class="card-title">Clases de Hoy</div>
+                    <div class="card-value">4</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title">Materias Asignadas</div>
+                    <div class="card-value">6</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">👨‍🎓</div>
+                    <div class="card-title">Estudiantes Total</div>
+                    <div class="card-value">145</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">🔔</div>
+                    <div class="card-title">Notificaciones</div>
+                    <div class="card-value">2</div>
+                </div>
+            </div>
+            <div class="dashboard-main-content">
+                <section class="dashboard-classes">
+                    <h2>Clases de Hoy</h2>
+                    <p>domingo, 12 de octubre de 2025</p>
+                    <div class="class-list">
+                        <div class="class-item">
+                            <div class="class-time">08:00 - 10:00</div>
+                            <div class="class-name">Programación I</div>
+                            <div class="class-room">Lab 103 · 32 estudiantes</div>
+                            <div class="class-status">✔️</div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">10:00 - 12:00</div>
+                            <div class="class-name">Programación II</div>
+                            <div class="class-room">Lab 103 · 28 estudiantes</div>
+                            <div class="class-status">✔️</div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">14:00 - 16:00</div>
+                            <div class="class-name">Base de Datos</div>
+                            <div class="class-room">Lab 101 · 30 estudiantes</div>
+                            <div class="class-status">✔️</div>
+                        </div>
+                    </div>
+                    <button class="btn-full-schedule">Ver Horario Completo</button>
+                </section>
+                <section class="dashboard-quick-access">
+                    <h2>Accesos Rápidos</h2>
+                    <p>Acciones frecuentes según tu rol</p>
+                    <ul class="quick-access-list">
+                        <li><span class="quick-access-icon">🕒</span>Consultar Horarios</li>
+                        <li><span class="quick-access-icon">⚙️</span>Configurar Preferencias</li>
+                        <li><span class="quick-access-icon">🔔</span>Ver Notificaciones</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

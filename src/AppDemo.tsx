@@ -7,7 +7,7 @@ import { AsignacionHorarios } from "./components/AsignacionHorarios/AsignacionHo
 import { AuthProvider, useAuth, type UserRole } from "./pages/auth/AuthContext";
 
 function AppContent() {
-  const { user, loginWithRole } = useAuth();
+  const { user, loginWithRole, logout } = useAuth();
   const [currentView, setCurrentView] = useState("dashboard");
 
   const handleLogin = (role: UserRole, userName: string) => {
@@ -68,7 +68,7 @@ function AppContent() {
   }
 
   return (
-    <Layout currentView={currentView} onNavigate={setCurrentView} userRole={user.role} userName={user.name}>
+    <Layout currentView={currentView} onNavigate={setCurrentView} userRole={user.role} userName={user.name} onLogout={logout}>
       {renderView()}
     </Layout>
   );

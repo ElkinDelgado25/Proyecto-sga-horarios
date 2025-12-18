@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/Perfil.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Perfil.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar-superior">
+        <div class="navbar-left">
+            <img src="../Src/Foto_uleam_pequeño.png" alt="ULEAM Logo" class="navbar-uleam-logo" />
+            <span class="navbar-logo">&#9776;</span>
+            <span class="navbar-title">
+                Aula Virtual
+                <span class="navbar-birrete"> 
+                    <!-- Icono de birrete estilo sólido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 28px; height: 28px; vertical-align: middle;">
+                        <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+                    </svg>
+                </span>
+            </span>
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="#">Página Principal</a></li>
+            <li class="navbar-item"><a href="#">Área personal</a></li>
+            <li class="navbar-item"><a href="#">Mis cursos</a></li>
+        </ul>
+        <div class="navbar-right">
+            <div class="navbar-user-dropdown" tabindex="0">
+                <span class="navbar-user-icon">US</span>
+                <span class="navbar-username">Usuario</span>
+                <div class="navbar-user-dropdown-content">
+                    <a href="#">Perfil</a>
+                    <a href="#" id="btnLogoutDropdown">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Home.html"><span class="sidebar-icon">🏠</span>Inicio</a></li>
+                <li><a href="Mis_cursos.html"><span class="sidebar-icon">📚</span>Mis cursos</a></li>
+                <li><a href="Horarios.html"><span class="sidebar-icon">🕒</span>Horarios</a></li>
+                <li><a href="Notificaciones.html"><span class="sidebar-icon">🔔</span>Notificaciones</a></li>
+                <li><a href="Preferencias.html"><span class="sidebar-icon">⚙️</span>Preferencias</a></li>
+                <li><a href="Usuarios.html"><span class="sidebar-icon">👤</span>Usuarios</a></li>
+                <li><a href="Facultades.html"><span class="sidebar-icon">🏛️</span>Facultades</a></li>
+                <li><a href="Asignacion_horario.html"><span class="sidebar-icon">🗓️</span>Asignación de Horario</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard">
+            <section class="perfil-panel">
+                <h2 class="perfil-title">Mi Perfil</h2>
+                <p class="perfil-desc">Administra tu información personal</p>
+                <div class="perfil-tabs">
+                    <button class="tab-btn active">Información Personal</button>
+                    <button class="tab-btn">Información Académica</button>
+                    <button class="tab-btn">Seguridad</button>
+                </div>
+                <div class="datos-panel">
+                    <h3 class="datos-title">Datos Personales</h3>
+                    <p class="datos-desc">Actualiza tu información de contacto y datos personales</p>
+                    <div class="datos-personales-row">
+                        <div class="perfil-foto">
+                            <div class="foto-circle">JP</div>
+                            <div class="perfil-nombre">Juan Pérez</div>
+                            <span class="perfil-rol">Docente</span>
+                            <button class="btn-cambiar-foto">Cambiar Foto</button>
+                        </div>
+                        <form class="datos-form">
+                            <div class="form-row">
+                                <label>Nombre
+                                    <input type="text" value="Juan" readonly>
+                                </label>
+                                <label>Apellido
+                                    <input type="text" value="Pérez" readonly>
+                                </label>
+                            </div>
+                            <div class="form-row">
+                                <label>Cédula / DNI
+                                    <input type="text" value="1234567890" readonly>
+                                </label>
+                                <label>Fecha de Nacimiento
+                                    <input type="text" value="15/05/1995" readonly>
+                                </label>
+                            </div>
+                            <div class="form-row">
+                                <label>Correo Electrónico
+                                    <input type="text" value="juan.perez@universidad.edu" readonly>
+                                </label>
+                                <label>Teléfono
+                                    <input type="text" value="+593 99 123 4567" readonly>
+                                </label>
+                            </div>
+                            <div class="form-row">
+                                <label>Dirección
+                                    <input type="text" value="Quito, Ecuador" readonly>
+                                </label>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn-guardar" type="button">Guardar Cambios</button>
+                                <button class="btn-cancelar" type="button">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/Notificaciones.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Notificaciones.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar-superior">
+        <div class="navbar-left">
+            <img src="../Src/Foto_uleam_pequeño.png" alt="ULEAM Logo" class="navbar-uleam-logo" />
+            <span class="navbar-logo">&#9776;</span>
+            <span class="navbar-title">
+                Aula Virtual
+                <span class="navbar-birrete"> 
+                    <!-- Icono de birrete estilo sólido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 28px; height: 28px; vertical-align: middle;">
+                        <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+                    </svg>
+                </span>
+            </span>
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="Home.html">Página Principal</a></li>
+            <li class="navbar-item"><a href="Preferencias.html">Área personal</a></li>
+            <li class="navbar-item"><a href="Mis_cursos.html">Mis cursos</a></li>
+        </ul>
+        <div class="navbar-right">
+            <div class="navbar-user-dropdown" tabindex="0">
+                <span class="navbar-user-icon">US</span>
+                <span class="navbar-username">Usuario</span>
+                <div class="navbar-user-dropdown-content">
+                    <a href="Perfil.html">Perfil</a>
+                    <a href="Login.html" id="btnLogoutDropdown">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Home.html"><span class="sidebar-icon">🏠</span>Inicio</a></li>
+                <li><a href="Mis_cursos.html"><span class="sidebar-icon">📚</span>Mis cursos</a></li>
+                <li><a href="Horarios.html"><span class="sidebar-icon">🕒</span>Horarios</a></li>
+                <li class="active"><a href="Notificaciones.html"><span class="sidebar-icon">🔔</span>Notificaciones</a></li>
+                <li><a href="Preferencias.html"><span class="sidebar-icon">⚙️</span>Preferencias</a></li>
+                <li><a href="Usuarios.html"><span class="sidebar-icon">👤</span>Usuarios</a></li>
+                <li><a href="Facultades.html"><span class="sidebar-icon">🏛️</span>Facultades</a></li>
+                <li><a href="Asignacion_horario.html"><span class="sidebar-icon">🗓️</span>Asignación de Horario</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard">
+            <section class="notifications-panel">
+                <div class="notifications-header">
+                    <h2>Notificaciones y Reportes</h2>
+                    <span class="notifications-count">3 notificaciones sin leer</span>
+                    <div class="notifications-actions">
+                        <button class="btn-report"><span>📄</span> Generar Reporte</button>
+                        <button class="btn-mark-all"><span>✔️</span> Marcar Todo como Leído</button>
+                    </div>
+                </div>
+                <div class="notifications-list">
+                    <!-- Notificación 1 -->
+                    <div class="notification-card">
+                        <div class="notification-icon calendar"></div>
+                        <div class="notification-content">
+                            <div class="notification-title-row">
+                                <span class="notification-title">Cambio de Aula</span>
+                                <span class="notification-tag cambio">cambio</span>
+                                <span class="notification-tag nuevo">Nuevo</span>
+                            </div>
+                            <div class="notification-desc">La clase de Programación I del día Lunes se movió de Lab 102 a Lab 103</div>
+                            <div class="notification-date">2025-10-09 10:30</div>
+                        </div>
+                        <button class="btn-mark-read">✔️ Marcar como leído</button>
+                    </div>
+                    <!-- Notificación 2 -->
+                    <div class="notification-card">
+                        <div class="notification-icon system"></div>
+                        <div class="notification-content">
+                            <div class="notification-title-row">
+                                <span class="notification-title">Mantenimiento Programado</span>
+                                <span class="notification-tag sistema">sistema</span>
+                                <span class="notification-tag nuevo">Nuevo</span>
+                            </div>
+                            <div class="notification-desc">El sistema estará en mantenimiento el domingo 13 de octubre de 2:00 AM a 6:00 AM</div>
+                            <div class="notification-date">2025-10-08 15:00</div>
+                        </div>
+                        <button class="btn-mark-read">✔️ Marcar como leído</button>
+                    </div>
+                    <!-- Notificación 3 -->
+                    <div class="notification-card">
+                        <div class="notification-icon error"></div>
+                        <div class="notification-content">
+                            <div class="notification-title-row">
+                                <span class="notification-title">Conflicto de Horario Detectado</span>
+                                <span class="notification-tag incidencia">incidencia</span>
+                                <span class="notification-tag nuevo">Nuevo</span>
+                            </div>
+                            <div class="notification-desc">Se detectó un conflicto entre dos clases asignadas al Aula 301 el martes a las 10:00</div>
+                            <div class="notification-date">2025-10-08 09:15</div>
+                        </div>
+                        <button class="btn-mark-read">✔️ Marcar como leído</button>
+                    </div>
+                    <!-- Notificación 4 -->
+                    <div class="notification-card leido">
+                        <div class="notification-icon report"></div>
+                        <div class="notification-content">
+                            <div class="notification-title-row">
+                                <span class="notification-title">Reporte Mensual Disponible</span>
+                                <span class="notification-tag reporte">reporte</span>
+                            </div>
+                            <div class="notification-desc">El reporte de asistencia de septiembre está listo para descargar</div>
+                            <div class="notification-date">2025-10-07 14:20</div>
+                        </div>
+                    </div>
+                    <!-- Notificación 5 -->
+                    <div class="notification-card leido">
+                        <div class="notification-icon cambio"></div>
+                        <div class="notification-content">
+                            <div class="notification-title-row">
+                                <span class="notification-title">Cambio de Docente</span>
+                                <span class="notification-tag cambio">cambio</span>
+                            </div>
+                            <div class="notification-desc">El Dr. García será reemplazado por la Dra. Fernández en Cálculo Diferencial el viernes</div>
+                            <div class="notification-date">2025-10-06 11:45</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

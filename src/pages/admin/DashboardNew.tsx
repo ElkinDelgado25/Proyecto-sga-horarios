@@ -61,7 +61,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <Layout currentView={currentView} onNavigate={setCurrentView} userRole={userRole} userName={userName}>
+    <Layout currentView={currentView} onNavigate={setCurrentView} userRole={userRole} userName={userName} onLogout={() => window.location.href = '/'}>
       {renderView()}
     </Layout>
   );

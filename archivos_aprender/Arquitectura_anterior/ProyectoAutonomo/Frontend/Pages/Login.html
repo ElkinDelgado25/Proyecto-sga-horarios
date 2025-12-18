@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Login.js" defer></script>
+</head>
+
+<body>  
+    <div class="Menu-izquierdo">
+        <div class="Texto-central">
+            <div class="texto">
+                <h1>Sistema de Gestión de Horarios</h1>
+                <p>Plataforma Integral para la Administracion de Horarios Academicos Universitarios</p>
+            </div>
+            <div class="Imagen">
+                <img src="https://aulavirtualmoodle.uleam.edu.ec/pluginfile.php/1/theme_academi/logo/1759176978/favicon_ULEAM_2.png">
+            </div>
+        </div>
+
+    </div>
+    <div class="Menu-derecho">
+        <div class="Encabezado-Login">
+            <h2>Iniciar sesión</h2>
+            <img src="../Src/11284777.png" alt="Imagen de inicio de sesión">
+            <p><strong>Bienvenido al Sistema de gestion de Horario</strong></p>
+            <!-- <svg class="input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 001 2z"/>
+            </svg> -->
+        </div>
+        <div class="Formulario-Login">
+            <form id="loginForm">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" required placeholder="Ex: Usuario@uleam.edu.ec">
+                <br><br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required placeholder="********">
+                <br>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <input type="checkbox" name="RecordarContraseña" value="SI" id="recordar">
+                    <label for="recordar" style="margin: 0;">Recordar contraseña</label>
+                </div>
+                <a href="ForgetPassword.html"><strong>¿Olvidaste tu contraseña?</strong></a>
+                <div class="Botones-login">
+                    <button type="submit">Entrar Como Estudiante</button>
+                    <button type="submit">Entrar Como Docente</button>
+                    <button type="submit">Entrar como Administrador </button>
+
+                </div>
+            </form>
+        </div>
+        <div class="Footer-Login">
+            <p>¿No tienes una cuenta? <a href="Register.html">Crear Cuenta</a></p>
+            <a href="#">Accede como Invitado</a>
+
+        </div>
+    </div>
+</body>
+
+</html>

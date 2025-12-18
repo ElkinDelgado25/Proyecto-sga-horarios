@@ -1,0 +1,181 @@
+<!-- Icono de birrete estilo sólido
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+     fill="currentColor" class="w-6 h-6">
+  <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+</svg> -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cursos</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/Horarios.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Mis_cursos.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar-superior">
+        <div class="navbar-left">
+            <img src="../Src/Foto_uleam_pequeño.png" alt="ULEAM Logo" class="navbar-uleam-logo" />
+            <span class="navbar-logo">&#9776;</span>
+            <span class="navbar-title">
+                Aula Virtual
+                <span class="navbar-birrete"> 
+                    <!-- Icono de birrete estilo sólido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 28px; height: 28px; vertical-align: middle;">
+                        <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+                    </svg>
+                </span>
+            </span>
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="Home.html">Página Principal</a></li>
+            <li class="navbar-item"><a href="Preferencias.html">Área personal</a></li>
+            <li class="navbar-item"><a href="Mis_cursos.html">Mis cursos</a></li>
+        </ul>
+        <div class="navbar-right">
+            <div class="navbar-user-dropdown" tabindex="0">
+                <span class="navbar-user-icon">US</span>
+                <span class="navbar-username">Usuario</span>
+                <div class="navbar-user-dropdown-content">
+                    <a href="Perfil.html">Perfil</a>
+                    <a href="Login.html" id="btnLogoutDropdown">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Home.html"><span class="sidebar-icon">🏠</span>Inicio</a></li>
+                <li><a href="Mis_cursos.html"><span class="sidebar-icon">📚</span>Mis cursos</a></li>
+                <li class="active"><a href="Horarios.html"><span class="sidebar-icon">🕒</span>Horarios</a></li>
+                <li><a href="Notificaciones.html"><span class="sidebar-icon">🔔</span>Notificaciones</a></li>
+                <li><a href="Preferencias.html"><span class="sidebar-icon">⚙️</span>Preferencias</a></li>
+                <li><a href="Usuarios.html"><span class="sidebar-icon">👤</span>Usuarios</a></li>
+                <li><a href="Facultades.html"><span class="sidebar-icon">🏛️</span>Facultades</a></li>
+                <li><a href="Asignacion_horario.html"><span class="sidebar-icon">🗓️</span>Asignación de Horario</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h1>Consulta de Horarios</h1>
+                <p>Visualiza y descarga tu horario académico</p>
+            </div>
+            <div class="dashboard-classes">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+                    <div>
+                        <span style="font-weight: 600; color: #23395d; font-size: 1.08rem;">Tabla de Horarios</span>
+                        <span style="color: #888; font-size: 0.98rem; margin-left: 1.2rem;">Semestre 2025-1</span>
+                    </div>
+                    <div style="display: flex; gap: 0.7rem; align-items: center;">
+                        <select style="padding: 0.4rem 1rem; border-radius: 6px; border: 1px solid #e0e0e0; font-size: 1rem;">
+                            <option>2025-1</option>
+                            <option>2024-2</option>
+                        </select>
+                        <button style="background: #f5f6fa; border: none; border-radius: 6px; padding: 0.4rem 0.7rem; cursor: pointer; font-size: 1.1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582M20 20v-5h-.581M5.635 19A8.001 8.001 0 0112 4a8 8 0 017.364 15"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); padding: 1.2rem 1.5rem;">
+                    <div class="class-list">
+                        <div class="class-item">
+                            <div class="class-time"><strong>Lunes</strong> 08:00 - 10:00</div>
+                            <div class="class-name">Cálculo Diferencial</div>
+                            <div class="class-room">Aula 301</div>
+                            <div class="class-teacher">Dr. García</div>
+                            <div class="class-paralelo">A</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Lunes</strong> 10:00 - 12:00</div>
+                            <div class="class-name">Programación I</div>
+                            <div class="class-room">Lab 102</div>
+                            <div class="class-teacher">Ing. Martínez</div>
+                            <div class="class-paralelo">B</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Lunes</strong> 14:00 - 16:00</div>
+                            <div class="class-name">Física I</div>
+                            <div class="class-room">Aula 205</div>
+                            <div class="class-teacher">Dra. López</div>
+                            <div class="class-paralelo">A</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Martes</strong> 10:00 - 12:00</div>
+                            <div class="class-name">Álgebra Lineal</div>
+                            <div class="class-room">Aula 302</div>
+                            <div class="class-teacher">Dr. Ramírez</div>
+                            <div class="class-paralelo">A</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Martes</strong> 10:00 - 12:00</div>
+                            <div class="class-name">Química General</div>
+                            <div class="class-room">Lab 201</div>
+                            <div class="class-teacher">Dra. Mendoza</div>
+                            <div class="class-paralelo">C</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Miércoles</strong> 08:00 - 10:00</div>
+                            <div class="class-name">Cálculo Diferencial</div>
+                            <div class="class-room">Aula 301</div>
+                            <div class="class-teacher">Dr. García</div>
+                            <div class="class-paralelo">A</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Miércoles</strong> 14:00 - 16:00</div>
+                            <div class="class-name">Inglés I</div>
+                            <div class="class-room">Aula 105</div>
+                            <div class="class-teacher">Prof. Smith</div>
+                            <div class="class-paralelo">B</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Jueves</strong> 10:00 - 12:00</div>
+                            <div class="class-name">Programación I</div>
+                            <div class="class-room">Lab 102</div>
+                            <div class="class-teacher">Ing. Martínez</div>
+                            <div class="class-paralelo">B</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time"><strong>Viernes</strong> 08:00 - 10:00</div>
+                            <div class="class-name">Física I</div>
+                            <div class="class-room">Aula 205</div>
+                            <div class="class-teacher">Dra. López</div>
+                            <div class="class-paralelo">A</div>
+                            <div class="class-status"><svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <button class="dashboard-btn-pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19v-6m0 0V5m0 8l-3-3m3 3l3-3"/></svg>
+                            Descargar PDF
+                        </button>
+                        <button class="dashboard-btn-report">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 018 0v2m-4-4V7a4 4 0 00-8 0v6m4 4v2a4 4 0 01-8 0v-2"/></svg>
+                            Generar Reporte
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

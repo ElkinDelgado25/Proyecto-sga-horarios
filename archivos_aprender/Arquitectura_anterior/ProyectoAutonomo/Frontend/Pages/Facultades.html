@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facultades</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/Facultades.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Facultades.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar-superior">
+        <div class="navbar-left">
+            <img src="../Src/Foto_uleam_pequeño.png" alt="ULEAM Logo" class="navbar-uleam-logo" />
+            <span class="navbar-logo">&#9776;</span>
+            <span class="navbar-title">
+                Aula Virtual
+                <span class="navbar-birrete"> 
+                    <!-- Icono de birrete estilo sólido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 28px; height: 28px; vertical-align: middle;">
+                        <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+                    </svg>
+                </span>
+            </span>
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="Home.html">Página Principal</a></li>
+            <li class="navbar-item"><a href="Preferencias.html">Área personal</a></li>
+            <li class="navbar-item"><a href="Mis_cursos.html">Mis cursos</a></li>
+        </ul>
+        <div class="navbar-right">
+            <div class="navbar-user-dropdown" tabindex="0">
+                <span class="navbar-user-icon">US</span>
+                <span class="navbar-username">Usuario</span>
+                <div class="navbar-user-dropdown-content">
+                    <a href="Perfil.html">Perfil</a>
+                    <a href="Login.html" id="btnLogoutDropdown">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Home.html"><span class="sidebar-icon">🏠</span>Inicio</a></li>
+                <li><a href="Mis_cursos.html"><span class="sidebar-icon">📚</span>Mis cursos</a></li>
+                <li><a href="Horarios.html"><span class="sidebar-icon">🕒</span>Horarios</a></li>
+                <li><a href="Notificaciones.html"><span class="sidebar-icon">🔔</span>Notificaciones</a></li>
+                <li><a href="Preferencias.html"><span class="sidebar-icon">⚙️</span>Preferencias</a></li>
+                <li><a href="Usuarios.html"><span class="sidebar-icon">👤</span>Usuarios</a></li>
+                <li class="active"><a href="Facultades.html"><span class="sidebar-icon">🏛️</span>Facultades</a></li>
+                <li><a href="Asignacion_horario.html"><span class="sidebar-icon">🗓️</span>Asignación de Horario</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard">
+            <section class="facultades-panel">
+                <h2 class="facultades-title">Gestión de Facultades y Materias</h2>
+                <p class="facultades-desc">Administra la estructura académica de la universidad</p>
+                <div class="facultades-tabs">
+                    <button class="tab-btn active">Facultades y Carreras</button>
+                    <button class="tab-btn">Materias</button>
+                </div>
+                <div class="facultades-list-panel">
+                    <div class="facultades-list-header">
+                        <span class="facultades-list-title">Facultades</span>
+                        <span class="facultades-list-count">4 facultades registradas</span>
+                        <button class="btn-nueva-facultad">+ Nueva Facultad</button>
+                    </div>
+                    <table class="facultades-table">
+                        <thead>
+                            <tr>
+                                <th>Facultad</th>
+                                <th>Carreras</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ingeniería</td>
+                                <td>Sistemas, Civil, Industrial</td>
+                                <td class="acciones-cell">
+                                    <button class="btn-editar" title="Editar">✏️</button>
+                                    <button class="btn-eliminar" title="Eliminar">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ciencias</td>
+                                <td>Matemáticas, Física, Química</td>
+                                <td class="acciones-cell">
+                                    <button class="btn-editar" title="Editar">✏️</button>
+                                    <button class="btn-eliminar" title="Eliminar">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Medicina</td>
+                                <td>Medicina General, Enfermería</td>
+                                <td class="acciones-cell">
+                                    <button class="btn-editar" title="Editar">✏️</button>
+                                    <button class="btn-eliminar" title="Eliminar">🗑️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Administración</td>
+                                <td>Administración de Empresas, Contabilidad</td>
+                                <td class="acciones-cell">
+                                    <button class="btn-editar" title="Editar">✏️</button>
+                                    <button class="btn-eliminar" title="Eliminar">🗑️</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

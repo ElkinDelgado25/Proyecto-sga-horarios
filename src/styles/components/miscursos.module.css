@@ -1,200 +1,170 @@
-/* MisCursos Styles */
-.container {
-  padding: 1.5rem;
-  max-width: 80rem;
-  margin: 0 auto;
+/* Mis Cursos CSS - Replicado del proyecto HTML/CSS anterior */
+.dashboard {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.header {
-  margin-bottom: 1.5rem;
+.dashboardHeader h1 {
+    font-size: 2rem;
+    color: #ec3237;
+    margin-bottom: 0.2rem;
 }
 
-.title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #dc2626;
-  margin-bottom: 1.5rem;
+/* Filtros y controles de tarjetas */
+.dashboardCardsFilter {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
 }
 
-.filterCard {
-  background-color: white;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+.dashboardCardsFilterTitle {
+    color: #ec3237;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.filterTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #dc2626;
-  margin-bottom: 1rem;
+.dashboardCardsFilterControls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.filterControls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
+.dashboardCardsFilterBtn {
+    background: #ec3237;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
 }
 
-/* Course Grid */
-.courseGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.dashboardCardsFilterBtn:hover {
+    background: #b71c1c;
 }
 
-@media (min-width: 768px) {
-  .courseGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.filterSelect {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    cursor: pointer;
 }
 
-@media (min-width: 1024px) {
-  .courseGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Tarjetas de materias */
+.dashboardCards {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-/* Course Card */
-.courseCard {
-  background-color: white;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
+.dashboardCard {
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 320px;
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
 }
 
-.courseCard:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.dashboardCard:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(44,62,80,0.13);
+    z-index: 2;
 }
 
-.courseHeader {
-  position: relative;
-  height: 7rem;
-  overflow: hidden;
+.dashboardCardYellow {
+    background: linear-gradient(90deg,#f9d423,#ffce00);
 }
 
-.patternOverlay {
-  position: absolute;
-  inset: 0;
-  opacity: 0.3;
+.dashboardCardRed {
+    background: linear-gradient(90deg,#ff5858,#f85757);
 }
 
-.squaresPattern {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  height: 100%;
-  padding: 0.75rem;
+.dashboardCardOrange {
+    background: linear-gradient(90deg,#ff9966,#ff5e62);
 }
 
-.square {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0.125rem;
+.dashboardCardGreen {
+    background: linear-gradient(90deg,#43e97b,#38f9d7);
 }
 
-.courseMenu {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  z-index: 10;
+.dashboardCardPurple {
+    background: linear-gradient(90deg,#b36af9,#a259f7);
 }
 
-.menuButton {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 0.375rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
+.dashboardCardBlue {
+    background: linear-gradient(90deg,#3b82f6,#60a5fa);
 }
 
-.menuButton:hover {
-  background-color: white;
+.dashboardCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
 }
 
-.courseBody {
-  padding: 1rem;
+.dashboardCardIcon {
+    font-size: 1.7rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));
 }
 
-.courseName {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 0.5rem;
-  line-height: 1.25;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.dashboardCardTitle {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
-.courseCode {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-bottom: 0.25rem;
+.dashboardCardInfo {
+    font-size: 0.98rem;
+    margin-bottom: 0.7rem;
+    opacity: 0.95;
 }
 
-.courseCarrera {
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-bottom: 0.75rem;
+.dashboardCardSchedule {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.7rem 0;
+    font-size: 0.97rem;
+    opacity: 0.95;
 }
 
-.courseInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid #e5e7eb;
+.dashboardCardSchedule li {
+    margin-bottom: 0.2rem;
+    padding-left: 1.2em;
+    position: relative;
 }
 
-.courseSchedule {
-  font-size: 0.75rem;
-  color: #374151;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+.dashboardCardSchedule li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #fff;
+    font-size: 1.1em;
+    top: 0;
 }
 
-.courseRoom {
-  font-size: 0.75rem;
-  color: #374151;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-/* Color gradients */
-.gradientPurple {
-  background: linear-gradient(to bottom right, #a78bfa, #7c3aed);
-}
-
-.gradientBlue {
-  background: linear-gradient(to bottom right, #60a5fa, #2563eb);
-}
-
-.gradientGreen {
-  background: linear-gradient(to bottom right, #34d399, #059669);
-}
-
-.gradientOrange {
-  background: linear-gradient(to bottom right, #fb923c, #ea580c);
-}
-
-.gradientPink {
-  background: linear-gradient(to bottom right, #f472b6, #db2777);
-}
-
-.gradientIndigo {
-  background: linear-gradient(to bottom right, #818cf8, #4f46e5);
+.dashboardCardRoom {
+    font-size: 0.97rem;
+    opacity: 0.93;
+    margin-top: 0.2rem;
+    padding-left: 0.2em;
 }

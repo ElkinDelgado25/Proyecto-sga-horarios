@@ -1,137 +1,116 @@
-/* AsignacionHorarios Styles */
+/* Asignacion Horarios CSS */
 .container {
-  padding: 1.5rem;
-  max-width: 80rem;
-  margin: 0 auto;
+    padding: 2rem 2.5rem;
 }
 
 .header {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0;
+    font-size: 2rem;
+    color: #ec3237;
+    margin-bottom: 0.2rem;
 }
 
 .subtitle {
-  color: #6b7280;
-  margin-top: 0.25rem;
+    color: #888;
+    font-size: 1rem;
 }
 
 .contentGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .contentGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .formGrid {
-  display: grid;
-  gap: 1rem;
-}
-
-.formRow {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .formRow {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .fieldGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .actionButtons {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-/* Table */
-.tableContainer {
-  overflow-x: auto;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.875rem;
-}
-
-.tableHeader {
-  background-color: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.tableHeaderCell {
-  padding: 0.75rem;
-  text-align: left;
-  font-weight: 500;
-  color: #6b7280;
-}
-
-.tableRow {
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.tableRow:hover {
-  background-color: #f9fafb;
-}
-
-.tableCell {
-  padding: 1rem 0.75rem;
-}
-
-.deleteButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  background-color: #fee2e2;
-  color: #dc2626;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.deleteButton:hover {
-  background-color: #fecaca;
+    margin-top: 1rem;
 }
 
 .emptyState {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: #6b7280;
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
 .emptyStateIcon {
-  margin: 0 auto 1rem;
-  color: #d1d5db;
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
 }
 
 .emptyStateTitle {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #374151;
-  margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #23395d;
+    margin-bottom: 0.5rem;
 }
 
 .emptyStateText {
-  font-size: 0.875rem;
+    color: #888;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    background: #f5f6fa;
+}
+
+.tableHeaderCell {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #23395d;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tableRow {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tableRow:hover {
+    background: #f5f6fa;
+}
+
+.tableCell {
+    padding: 0.75rem;
+}
+
+.deleteButton {
+    background: #ec3237;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.deleteButton:hover {
+    background: #b71c1c;
 }

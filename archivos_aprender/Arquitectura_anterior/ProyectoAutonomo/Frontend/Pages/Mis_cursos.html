@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cursos</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../css/Mis_cursos.css">
+    <!-- JS externo con defer -->
+    <script src="../../Backend/js/Mis_cursos.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar-superior">
+        <div class="navbar-left">
+            <img src="../Src/Foto_uleam_pequeño.png" alt="ULEAM Logo" class="navbar-uleam-logo" />
+            <span class="navbar-logo">&#9776;</span>
+            <span class="navbar-title">
+                Aula Virtual
+                <span class="navbar-birrete"> 
+                    <!-- Icono de birrete estilo sólido -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 28px; height: 28px; vertical-align: middle;">
+                        <path d="M256 32L0 160l256 128 208-104v112h48V160L256 32zM88 256v80c0 35.3 78.8 64 168 64s168-28.7 168-64v-80l-168 84L88 256z"/>
+                    </svg>
+                </span>
+            </span>
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="Home.html">Página Principal</a></li>
+            <li class="navbar-item"><a href="Preferencias.html">Área personal</a></li>
+            <li class="navbar-item"><a href="Mis_cursos.html">Mis cursos</a></li>
+        </ul>
+        <div class="navbar-right">
+            <div class="navbar-user-dropdown" tabindex="0">
+                <span class="navbar-user-icon">US</span>
+                <span class="navbar-username">Usuario</span>
+                <div class="navbar-user-dropdown-content">
+                    <a href="Perfil.html">Perfil</a>
+                    <a href="Login.html" id="btnLogoutDropdown">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="Home.html"><span class="sidebar-icon">🏠</span>Inicio</a></li>
+                <li class="active"><a href="Mis_cursos.html"><span class="sidebar-icon">📚</span>Mis cursos</a></li>
+                <li><a href="Horarios.html"><span class="sidebar-icon">🕒</span>Horarios</a></li>
+                <li><a href="Notificaciones.html"><span class="sidebar-icon">🔔</span>Notificaciones</a></li>
+                <li><a href="Preferencias.html"><span class="sidebar-icon">⚙️</span>Preferencias</a></li>
+                <li><a href="Usuarios.html"><span class="sidebar-icon">👤</span>Usuarios</a></li>
+                <li><a href="Facultades.html"><span class="sidebar-icon">🏛️</span>Facultades</a></li>
+                <li><a href="Asignacion_horario.html"><span class="sidebar-icon">🗓️</span>Asignación de Horario</a></li>
+            </ul>
+        </aside>
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h1>Mis cursos</h1>
+            </div>
+            <div class="dashboard-cards-filter">
+                <span class="dashboard-cards-filter-title">Vista general de curso</span>
+                <div class="dashboard-cards-filter-controls">
+                    <select><option>Todos</option></select>
+                    <select><option>Ordenar por nombre de curso</option></select>
+                    <select><option>Tarjeta</option></select>
+                    <button class="dashboard-cards-filter-btn">Buscar</button>
+                </div>
+            </div>
+            <div class="dashboard-cards">
+                <div class="dashboard-card dashboard-card-yellow">
+                    <div class="dashboard-card-header">
+                        <span class="dashboard-card-icon">📚</span>
+                        <span class="dashboard-card-title">ADMINISTRACIÓN DE BASES DE DATOS DISTRIBUIDAS</span>
+                        <br><br>
+                    </div>
+                    <div class="dashboard-card-info">A -- SOFTWARE 2024 - NS</div>
+                    <br>
+                    <ul class="dashboard-card-schedule">
+                        <li>Lunes 9:00am - 11:00am</li>
+                        <li>Miércoles 9:00am - 11:00am</li>
+                        <br>
+                    </ul>
+                    <div class="dashboard-card-room">Aula: Lab 301</div>
+                </div>
+                <div class="dashboard-card dashboard-card-red">
+                    <div class="dashboard-card-header">
+                        <span class="dashboard-card-icon">🖥️</span>
+                        <span class="dashboard-card-title">ADMINISTRACIÓN DE SERVIDORES / SOFTWARE 2024</span>
+                        <br><br>
+                    </div>
+                    <div class="dashboard-card-info">A -- SOFTWARE 2024 - NS</div>
+                    <br>
+                    <ul class="dashboard-card-schedule">
+                        <li>Martes 14:00pm - 16:00pm</li>
+                        <li>Jueves 14:00pm - 16:00pm</li>
+                        <br>
+                    </ul>
+                    <div class="dashboard-card-room">Aula: Lab 205</div>
+                </div>
+                <div class="dashboard-card dashboard-card-orange">
+                    <div class="dashboard-card-header">
+                        <span class="dashboard-card-icon">🌐</span>
+                        <span class="dashboard-card-title">APLICACIONES PARA EL CLIENTE WEB / SOFTWARE</span>
+                        <br><br>
+                    </div>
+                    <div class="dashboard-card-info">A -- SOFTWARE 2024 - NS</div>
+                    <br>
+                    <ul class="dashboard-card-schedule">
+                        <li>Lunes 14:00pm - 17:00pm</li>
+                        <li>Viernes 9:00am - 12:00pm</li>
+                        <br>
+                    </ul>
+                    <div class="dashboard-card-room">Aula: Lab 102</div>
+                </div>
+                <div class="dashboard-card dashboard-card-purple">
+                    <div class="dashboard-card-header">
+                        <span class="dashboard-card-icon">📊</span>
+                        <span class="dashboard-card-title">ESTADÍSTICA PARA INGENIERÍA / SOFTWARE 2024</span>
+                        <br><br>
+                    </div>
+                    <div class="dashboard-card-info">A -- SOFTWARE 2024 - NS</div>
+                    <br>
+                    <ul class="dashboard-card-schedule">
+                        <li>Miércoles 16:00pm - 18:00pm</li>
+                        <li>Viernes 14:00pm - 16:00pm</li>
+                        <br>
+                    </ul>
+                    <div class="dashboard-card-room">Aula: Lab 303</div>
+                </div>
+                <div class="dashboard-card dashboard-card-green">
+                    <div class="dashboard-card-header">
+                        <span class="dashboard-card-icon">🤖</span>
+                        <span class="dashboard-card-title">PERSPECTIVA DE LA IA</span>
+                        <br><br>
+                    </div>
+                    <div class="dashboard-card-info">A -- SOFTWARE 2024 - NS</div>
+                    <br>
+                    <ul class="dashboard-card-schedule">
+                        <li>Jueves 10:00am - 12:00pm</li>
+                        <li>Viernes 16:00pm - 18:00pm</li>
+                        <br>
+                    </ul>
+                    <div class="dashboard-card-room">Aula: Lab 307</div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

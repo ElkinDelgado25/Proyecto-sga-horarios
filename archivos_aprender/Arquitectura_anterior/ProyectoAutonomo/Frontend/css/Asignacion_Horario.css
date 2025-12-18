@@ -1,0 +1,476 @@
+/* Reset básico y layout principal */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+}
+
+/* Layout principal */
+.main-layout {
+    display: flex;
+    background: transparent;
+    min-height: calc(100vh - 60px); /* dejar espacio para el navbar fijo */
+    margin-top: 60px; /* evita que el contenido quede debajo del navbar */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 0 0 rgba(0,0,0,0); /* placeholder */
+}
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #23395d;
+    margin-bottom: 1.5rem;
+}
+.sidebar-logo {
+    font-size: 1.5rem;
+    color: #23395d;
+}
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.sidebar-menu li {
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    color: #23395d;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar-menu li.active, .sidebar-menu li:hover {
+    background: #ec3237;;
+    color: #fff;
+}
+.sidebar-icon {
+    font-size: 1.2rem;
+}
+
+/* Dashboard */
+.dashboard {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Panel principal de asignación */
+.asignacion-panel {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2rem 2rem 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.asignacion-title {
+    font-size: 1.35rem;
+    color: #23395d;
+    font-weight: 700;
+    margin: 0;
+}
+.asignacion-desc {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+.asignacion-main {
+    display: flex;
+    gap: 2rem;
+}
+.nuevo-horario-panel, .horarios-asignados-panel {
+    background: #f5f6fa;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 320px;
+    max-width: 420px;
+}
+.nuevo-horario-title {
+    color: #23395d;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.nuevo-horario-desc {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+}
+.nuevo-horario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.form-row {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.form-row label {
+    font-size: 1rem;
+    color: #23395d;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+}
+.nuevo-horario-form select {
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    background: #fff;
+    color: #23395d;
+    font-weight: 500;
+}
+.btn-guardar-horario {
+    background: #23395d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-guardar-horario:hover {
+    background: #ec3237;
+    color: #fff;
+}
+.horarios-asignados-title {
+    color: #23395d;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+.horarios-asignados-count {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+}
+.horarios-asignados-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+.horarios-asignados-table th {
+    background: #f5f6fa;
+    color: #23395d;
+    font-weight: 600;
+    padding: 0.7rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+.horarios-asignados-table td {
+    padding: 0.7rem 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #222;
+    vertical-align: top;
+}
+.horarios-asignados-table tr:last-child td {
+    border-bottom: none;
+}
+.horario-detalle {
+    color: #888;
+    font-size: 0.92rem;
+    display: block;
+    margin-top: 2px;
+}
+.acciones-cell {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.btn-eliminar {
+    background: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem 0.7rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #d32f2f;
+    transition: background 0.2s;
+}
+.btn-eliminar:hover {
+    background: #fdeaea;
+    color: #d32f2f;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    color: #ec3237;
+    margin-bottom: 0.2rem;
+}
+.dashboard-header p {
+    color: #888;
+    font-size: 1rem;
+}
+
+
+
+/* Accesos rápidos */
+.dashboard-quick-access {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    flex: 1;
+    padding: 1.5rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.dashboard-quick-access h2 {
+    color: #23395d;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+.dashboard-quick-access p {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+}
+.quick-access-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.quick-access-list li {
+    background: #f5f6fa;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    color: #23395d;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.quick-access-list li:hover {
+    background: #ec3237;;
+    color: #fff;
+}
+.quick-access-icon {
+    font-size: 1.2rem;
+}
+
+/* Navbar superior */
+
+/* Navbar superior estilo moderno */
+/* --- INICIO: Definición tamaño y estilo de navbar superior --- */
+/* Para modificar el ANCHO de la navbar superior, cambia la propiedad 'width' aquí. Ejemplo: 'width: 90%;' para hacerla menos ancha. */
+.navbar-superior {
+    width: 100%; /* <-- MODIFICA AQUÍ EL ANCHO DE LA NAVBAR SUPERIOR */
+    background: #424242;
+    position: fixed; /* fixed para que siempre quede encima */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000; /* mayor z-index para sobreponer al resto */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem; /* más espacio horizontal para evitar desbordes */
+    min-height: 64px; /* ligeramente más alto para mejor centrado */
+    box-sizing: border-box;
+}
+/* --- FIN: Definición tamaño y estilo de navbar superior --- */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    flex-shrink: 1;
+}
+.navbar-logo {
+    font-size: 1.7rem;
+    color: #fff;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.navbar-uleam-logo {
+    width: 38px;
+    height: 38px;
+    margin-right: 0.7rem;
+    border-radius: 50%;
+    background: #424242;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex-shrink: 0;
+}
+.navbar-title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 1;
+}
+.navbar-birrete {
+    width: 28px;
+    height: 28px;
+    margin-left: 0.5rem;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    gap: 2rem;
+}
+.navbar-item a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 0.7rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+.navbar-item a:hover {
+    background: #ec3237;
+    color: white;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    min-width: 0;
+    flex-shrink: 1;
+}
+.navbar-user-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    height: 40px;
+    min-width: 0;
+    flex-shrink: 1;
+}
+.navbar-user-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #fff;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    z-index: 3000;
+    margin-top: 24px;
+    overflow: hidden;
+    padding: 0.3rem 0;
+}
+.navbar-user-dropdown:hover .navbar-user-dropdown-content,
+.navbar-user-dropdown:focus-within .navbar-user-dropdown-content {
+    display: block;
+}
+.navbar-user-dropdown-content a {
+    color: #23395d;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+    transition: background 0.2s, color 0.2s;
+    text-align: left;
+}
+.navbar-user-dropdown-content a:last-child {
+    border-bottom: none;
+}
+.navbar-user-dropdown-content a:hover {
+    background: #ec3237;
+    color: #fff;
+}
+.navbar-user-icon {
+    background: #1a2940;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 0.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    flex-shrink: 0;
+}
+.navbar-username {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    white-space: nowrap;
+    flex-shrink: 1;
+}
+
+.sidebar-menu a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    height: 100%;
+}

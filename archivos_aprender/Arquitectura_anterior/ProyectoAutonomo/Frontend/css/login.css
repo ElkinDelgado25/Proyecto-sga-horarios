@@ -1,0 +1,244 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Segoe UI', Arial, sans-serif;
+		background-image: url('../Src/Foto_uleam_fondo.jpg'); /* Fondo universidad usando ruta relativa */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: rgba(255,255,255,0.7); /* Blanco semitransparente encima */
+	background-blend-mode: lighten;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 100px;
+}
+
+.Menu-izquierdo{
+	width: 900px;
+	min-height: 250px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+	border-radius: 16px;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 32px 24px;
+}
+.Menu-derecho h2 {
+	background-color: white;
+	border-radius: 16px 16px 0 0;
+	color: black;
+	padding: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.7rem;
+	margin-bottom: 8px;
+	color: #ec3237; /* Color rojo aplicado al título del menú derecho */
+}
+
+.Menu-derecho img {
+	display: block;
+	margin: 0 auto 8px auto;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: 0 2px 8px rgba(236,50,55,0.15); /* Sombra con tintes rojos (usa rgba(236,50,55,x)) */
+	
+}
+.Menu-derecho {
+	width: 400px;
+	min-height: 600px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+	border-radius: 16px;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 32px 24px;
+}
+.Menu-izquierdo {
+	margin-right: 32px;
+	background:#ec3237;
+	color: #fff;
+	align-items: center;
+}
+.Menu-izquierdo p {
+	color: #f0f0f0;
+}
+
+.Texto-central {
+	display: flex; /* Contenedor horizontal: texto a la izquierda, imagen a la derecha */
+	align-items: center;
+	gap: 24px;
+}
+.Texto-central .texto {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	max-width: 60%;
+}
+.Texto-central h1 {
+	font-size: 3rem;
+	margin-bottom: 8px;
+	font-weight: 700;
+}
+.Texto-central p {
+	font-size: 1.75rem;
+	margin-bottom: 0;
+	color: rgba(255,255,255,0.95);
+}
+.Imagen {
+	width: 40%;
+	display: flex;
+	justify-content: center;
+}
+.Imagen img {
+	width: 160px;
+	height: 160px;
+	object-fit: cover;
+	border-radius: 12px; /* imagen rectangular con esquinas redondeadas */
+	background: #ec3237;
+}
+
+.Menu-derecho {
+	background: #fff;
+	color: #222;
+	align-items: center;
+}
+.Encabezado-Login h2 {
+	font-size: 1.7rem;
+	margin-bottom: 8px;
+	color: #ec3237; /* Color rojo aplicado al título del menú derecho */
+}
+.Encabezado-Login img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-bottom: 8px;
+	box-shadow: 0 2px 8px rgba(236,50,55,0.15); /* Sombra con tintes rojos (usa rgba(236,50,55,x)) */
+}
+.Encabezado-Login p {
+	font-size: 1rem;
+	color: #555;
+	margin-bottom: 16px;
+}
+
+.Formulario-Login {
+	width: 100%;
+	margin-bottom: 16px;
+}
+#loginForm {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+#loginForm label {
+	font-weight: 500;
+	color: #000000;
+	margin-bottom: 4px;
+}
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+	padding: 10px;
+	border: 1px solid #c7d2fe;
+	border-radius: 8px;
+	font-size: 1rem;
+	outline: none;
+	margin-bottom: 8px;
+	transition: border-color 0.2s;
+}
+#loginForm input[type="text"]:focus,
+#loginForm input[type="password"]:focus {
+	border-color: #000000;
+}
+#loginForm input[type="checkbox"] {
+	margin-right: 6px;
+}
+#loginForm a {
+	color: black; /* Color rojo aplicado a los enlaces del formulario */
+	text-decoration: none;
+	font-size: 0.95rem;
+	margin-bottom: 8px;
+}
+#loginForm a:hover {
+	text-decoration: underline;
+}
+.Botones-login {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 12px;
+}
+.Botones-login button {
+	padding: 10px 0;
+	background: #ec3237; /* Color rojo aplicado a los botones de ingresar */
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.Botones-login button:hover {
+	background: gray /* Color rojo oscuro al pasar el mouse */
+}
+
+.Footer-Login {
+	margin-top: 24px;
+	text-align: center;
+}
+.Footer-Login p {
+	font-size: 1rem;
+	color: #555;
+}
+.Footer-Login a {
+	color: #ec3237; /* Color rojo aplicado a los enlaces del footer */
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 6px;
+}
+.Footer-Login a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+	body {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 24px 0;
+	}
+	.Menu-izquierdo, .Menu-derecho {
+		width: 100%;
+		margin: 0 0 24px 0;
+		min-height: 400px;
+		border-radius: 12px;
+		padding: 24px 12px;
+	}
+	.Menu-izquierdo {
+		margin-right: 0;
+	}
+	/* En pantallas pequeñas apilar texto e imagen verticalmente */
+	.Texto-central {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.Texto-central .texto {
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		height: 140px;
+	}
+}
