@@ -43,6 +43,9 @@
 .card {
   padding: 12px;
   border-radius: 10px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .stack {
@@ -59,29 +62,178 @@
 
 .label {
   font-weight: 700;
+  color: #374151;
+  font-size: 0.875rem;
 }
 
 .input {
   padding: 10px 12px;
   border-radius: 10px;
   width: 100%;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .button {
   padding: 10px 12px;
   border-radius: 10px;
   font-weight: 700;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
 }
 
 .error {
   font-weight: 700;
+  color: #dc2626;
 }
 
 .muted {
   opacity: 0.75;
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 
 .link {
   font-weight: 700;
   text-decoration: none;
+  color: #3b82f6;
 }
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Estilos para tablas */
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table thead {
+  background-color: #f9fafb;
+}
+
+.table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 700;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.horaCell {
+  font-weight: 700;
+  color: #374151;
+  white-space: nowrap;
+  background-color: #f9fafb;
+}
+
+.claseCell {
+  min-height: 60px;
+  padding: 8px;
+}
+
+.claseCell strong {
+  display: block;
+  color: #1f2937;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loginGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+}
+
