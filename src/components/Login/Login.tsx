@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../styles/components/login.module.css";
 import userIcon from "../../assets/11284777.png";
 import uleamLogo from "../../assets/Foto_uleam_pequeño.png";
@@ -7,12 +7,97 @@ interface LoginProps {
   onLogin: (role: "estudiante" | "docente" | "administrador", userName: string) => void;
 }
 
+// Simulación de base de datos de usuarios
+const usersDatabase = {
+  estudiantes: [
+    { email: "estudiante@uleam.edu.ec", password: "123456", name: "Juan Pérez" },
+    { email: "maria@uleam.edu.ec", password: "123456", name: "María García" },
+  ],
+  docentes: [
+    { email: "docente@uleam.edu.ec", password: "123456", name: "Dr. García" },
+    { email: "prof@uleam.edu.ec", password: "123456", name: "Prof. Martínez" },
+  ],
+  administradores: [
+    { email: "admin@uleam.edu.ec", password: "123456", name: "Administrador" },
+    { email: "root@uleam.edu.ec", password: "123456", name: "Root Admin" },
+  ],
+};
+
 export function Login({ onLogin }: LoginProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
+  const [error, setError] = useState("");
 
-  const handleLogin = (role: "estudiante" | "docente" | "administrador") => {
-    const userName = email.split("@")[0] || "Usuario";
+  // Cargar credenciales guardadas al montar el componente
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberedEmail");
+    const savedPassword = localStorage.getItem("rememberedPassword");
+    const savedRememberMe = localStorage.getItem("rememberMe");
+
+    if (savedRememberMe === "true" && savedEmail && savedPassword) {
+      setEmail(savedEmail);
+      setPassword(savedPassword);
+      setRememberMe(true);
+    }
+  }, []);
+
+  const detectUserRole = (email: string, password: string): { role: "estudiante" | "docente" | "administrador" | null, userName: string } => {
+    // Buscar en estudiantes
+    const estudiante = usersDatabase.estudiantes.find(
+      (user) => user.email.toLowerCase() === email.toLowerCase() && user.password === password
+    );
+    if (estudiante) {
+      return { role: "estudiante", userName: estudiante.name };
+    }
+
+    // Buscar en docentes
+    const docente = usersDatabase.docentes.find(
+      (user) => user.email.toLowerCase() === email.toLowerCase() && user.password === password
+    );
+    if (docente) {
+      return { role: "docente", userName: docente.name };
+    }
+
+    // Buscar en administradores
+    const admin = usersDatabase.administradores.find(
+      (user) => user.email.toLowerCase() === email.toLowerCase() && user.password === password
+    );
+    if (admin) {
+      return { role: "administrador", userName: admin.name };
+    }
+
+    return { role: null, userName: "" };
+  };
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    if (!email || !password) {
+      setError("Por favor ingresa tu usuario y contraseña");
+      return;
+    }
+
+    const { role, userName } = detectUserRole(email, password);
+
+    if (!role) {
+      setError("Usuario o contraseña incorrectos");
+      return;
+    }
+
+    // Guardar o eliminar credenciales según "Recordar contraseña"
+    if (rememberMe) {
+      localStorage.setItem("rememberedEmail", email);
+      localStorage.setItem("rememberedPassword", password);
+      localStorage.setItem("rememberMe", "true");
+    } else {
+      localStorage.removeItem("rememberedEmail");
+      localStorage.removeItem("rememberedPassword");
+      localStorage.removeItem("rememberMe");
+    }
+
     onLogin(role, userName);
   };
 
@@ -40,46 +125,71 @@ export function Login({ onLogin }: LoginProps) {
         </div>
 
         <div className={styles.form}>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={handleLogin}>
             <label htmlFor="usuario" className={styles.label}>Usuario:</label>
             <input
               type="text"
               id="usuario"
               className={styles.input}
-              placeholder="Ex: Usuario@uleam.edu.ec"
+              placeholder="Ex: estudiante@uleam.edu.ec"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
 
             <label htmlFor="password" className={styles.label}>Contraseña:</label>
-            <input
-              type="password"
-              id="password"
-              className={styles.input}
-              placeholder="********"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className={styles.passwordContainer}>
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                className={styles.input}
+                placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className={`${styles.togglePassword} ${showPassword ? styles.visible : styles.hidden}`}
+                onClick={() => setShowPassword(!showPassword)}
+                title={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+              >
+                {showPassword ? "👁️" : "🔒"}
+              </button>
+            </div>
+
+            {error && (
+              <div style={{ color: "#dc2626", fontSize: "0.9rem", marginBottom: "10px", fontWeight: "500" }}>
+                {error}
+              </div>
+            )}
 
             <div className={styles.checkboxContainer}>
-              <input type="checkbox" id="recordar" className={styles.checkbox} />
+              <input
+                type="checkbox"
+                id="recordar"
+                className={styles.checkbox}
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
               <label htmlFor="recordar" className={styles.checkboxLabel}>Recordar contraseña</label>
             </div>
 
             <a href="#" className={styles.link}><strong>¿Olvidaste tu contraseña?</strong></a>
 
             <div className={styles.buttons}>
-              <button type="button" className={styles.button} onClick={() => handleLogin("estudiante")}>
-                Entrar Como Estudiante
+              <button type="submit" className={styles.button}>
+                Iniciar Sesión
               </button>
-              <button type="button" className={styles.button} onClick={() => handleLogin("docente")}>
-                Entrar Como Docente
-              </button>
-              <button type="button" className={styles.button} onClick={() => handleLogin("administrador")}>
-                Entrar como Administrador
-              </button>
+            </div>
+
+            {/* Información de usuarios de prueba */}
+            <div style={{ marginTop: "20px", fontSize: "0.85rem", color: "#666", lineHeight: "1.5" }}>
+              <strong>Usuarios de prueba:</strong>
+              <br />📚 Estudiante: <code>estudiante@uleam.edu.ec</code>
+              <br />👨‍🏫 Docente: <code>docente@uleam.edu.ec</code>
+              <br />⚙️ Admin: <code>admin@uleam.edu.ec</code>
+              <br />🔑 Contraseña: <code>123456</code>
             </div>
           </form>
         </div>

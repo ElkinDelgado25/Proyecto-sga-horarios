@@ -225,11 +225,17 @@ body {
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
     text-decoration: none;
+    transform: scale(1);
 }
 
 .sidebarMenuItem:hover, .sidebarMenuItemActive {
     background: #ec3237;
     color: #fff;
+    transform: scale(1);
+}
+
+.sidebarMenuItem:active {
+    transform: scale(1);
 }
 
 .sidebarIcon {

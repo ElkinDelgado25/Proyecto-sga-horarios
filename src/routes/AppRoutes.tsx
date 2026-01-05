@@ -22,7 +22,8 @@ export default function AppRoutes() {
       <Route path="/login" element={<Login />} />
       
       {/* Nueva ruta demo con componentes integrados */}
-      <Route path="/demo" element={<AppDemo />} />
+<Route path="/login" element={<AppDemo />} />
+        <Route path="/" element={<AppDemo />} />
 
       <Route path="/admin" element={<Dashboard />} />
       <Route path="/admin/dashboard-new" element={<DashboardNew />} />
@@ -36,8 +37,8 @@ export default function AppRoutes() {
       <Route path="/usuario/notificaciones" element={<Notificaciones />} />
       <Route path="/usuario/perfil" element={<Miperfil />} />
 
-      <Route path="/" element={<Navigate to="/demo" replace />} />
-      <Route path="*" element={<Navigate to="/demo" replace />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 }
